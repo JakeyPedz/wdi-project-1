@@ -26,63 +26,110 @@
 // o Remy from Ratatouille 
 // o Play sounds as well – so for example when someone gets hit it makes a sound.
 
-// When click on start iniate the being function for the game...
+
+// Next Problem to sort out
+// (i) Get the score to go back to 0 at the end of each game. 
+// (ii) Log the Scores of each player
+// (iii) Change the image of the rat when clicked
+
+
 $(function(){
   $('.start').on("click", begin);
+  $('ul').on("click", ".rat", clickOnRat);
+  $('#turn').html("Skinner's turn")
+
 });
 
-// the score will being on 0 
-var score = 0;
+var score        = 0;
+var turn         = 1
+var skinnerScore = 0;
+var mabelScore   = 0;
 
-// The is the function which plays the game 
-function begin(){
-// When the game begins put the score back to 0. 
-  $('.score span').html(0);
+
+
+function begin(){ 
+  updateScoreBoard();
+  $('#turn').html("")
+  $('#slayAgain').html("")
   score = 0;
+  $('.score span').html(score);
+  
 
-// This is referring to the li class
+
   var $lis = $('li');
-// The .length returns all of the elements 
-  var numberOfLis = $lis.length;
-
-// Is this something to do with having 0 seconds between each one appearing (??)
-// i.e. as soon as one appears the other one can then appear (??)
+  console.log($lis)
+  var numberOfLis  = $lis.length;
   var timeLapsed   = 0;
-// The length of the game is 10 seconds (10,000 milliseconds)
-  var lengthOfGame = 10000; 
+  var lengthOfGame = 10000;
 
-// Not too sure about this one (???)
+
   var playing = setInterval(function(selected){
     $('.timer').html((lengthOfGame - timeLapsed) / 1000)
     timeLapsed+=1000;
 
-    // Choose a random li using a random number as an index.
-    // Math.floor will convert the random number to have no decimal places
     var selected = $lis[Math.floor(Math.random()*numberOfLis)];
-
-// 
     $(selected).addClass("rat");
 
     var randomTime = Math.floor(Math.random()*1000) + 500;
 
-    // setTimeout allows you to run the code inside the inner function after a 
-    // certain amount of time. In this case, the value of randomTime
     setTimeout(function(selected){
       $(selected).removeClass("rat");
     }, randomTime, selected);
   }, 1000);
 
-  // Ensure the game stops after x number of seconds
   setTimeout(function(playing){
+
     clearInterval(playing);
+    console.log("Game has Ended");
+
+    if(turn===1){
+      skinnerScore = score
+      turn = 2
+      $('#turn').html("Mabels turn")
+      updateScoreBoard();
+
+    }else{
+
+      mabelScore = score
+      turn = 1
+
+      if(skinnerScore > mabelScore){
+        // Skinner wins do this:
+        $('#turn').html("Skinner Wins with "+skinnerScore+" to "+mabelScore)
+      }else if(skinnerScore===mabelScore){
+        // If its a draw do this:
+        $('#turn').html("Tie")
+      }else{
+        // Mabel wins do this:
+        $('#turn').html("Mabel Wins with "+mabelScore+" to "+skinnerScore)
+      }
+      updateScoreBoard();
+      $('#slayAgain').html("Click start to slay again").css('color', 'red')
+
+      skinnerScore = 0
+      mabelScore = 0
+    }
+
   }, lengthOfGame+2000, playing)
 
-  // Handle click events
-  $('ul').on("click", ".rat", clickOnRat)
+  
 } 
 
-// each time the rat is clicked add a score to the HTML 
 function clickOnRat(){
+  var $self = $(this);
   score++;
   $('.score span').html(score);
+  $self.addClass('dead-rat');
+
+  setTimeout(function(){
+    $self.removeClass('dead-rat');
+  },500)
+
 }
+
+function updateScoreBoard(){
+  $('.skinnerScore').html(" "+skinnerScore)
+  $('.mabelScore').html(" "+mabelScore);
+
+}
+

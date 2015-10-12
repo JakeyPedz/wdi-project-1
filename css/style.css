@@ -1,9 +1,19 @@
 body {
-  background: #E3F2FD;
+  background: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   color: #222;
+  margin: center; 
+  background-repeat: no-repeat;
+}
+
+.player1, {
+float: right;
+}
+
+.player2, {
+float:left;
 }
 
 .timer, .score {
@@ -49,6 +59,11 @@ li {
 
 li.rat {
   background: url("../images/rat.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+li.dead-rat{
+  background: url("../images/blood.svg");
   background-size: cover;
   background-position: top center;
 }
