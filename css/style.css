@@ -1,7 +1,7 @@
 main {
   margin: 30px auto;
   width: 1200px;
-  background-color: white;
+  background-color: black;
   overflow: hidden;
   padding: 20px;
 }
@@ -12,7 +12,7 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
-  color: #222;
+  color: white;
   margin: center;   
   background-repeat: no-repeat;
 }
@@ -40,9 +40,10 @@ body {
 }
 
 /*give them different classes and style their heights separately */
-.avatar {
-  height: 250px;
-}
+.avatar1 {
+  height: 315px;
+/*  width: 390px;
+*/}
 
 h1 {
   font-weight: bold;
@@ -66,21 +67,18 @@ display: none;
 display: none;
 }
 
-/*.player1, {
-float: right;
+#turn {
+  font-size: 40px;
 }
-
-.player2, {
-float:left;
-}*/
 
 .timer, .score {
   font-size: 30px;
   font-weight: bold;
 }
 
+
 .btn {
-  background: #64DD17;
+  background: red;
   border-radius: 5px;
   width: 400px;
   margin: 10px auto;
@@ -97,7 +95,7 @@ float:left;
 ul {
   width: 400px;
   height: 400px;
-  background: #2196F3;
+  background: #077AB3;
   margin: 0 auto;
   padding: 0;
   border-radius: 5px;
@@ -108,7 +106,7 @@ li {
   height: 80px;
   margin: 10px;
   float: left;
-  background: white;
+  background: black;
   list-style-type: none;
   border-radius: 100%;
   line-height: 80px;

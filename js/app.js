@@ -62,6 +62,8 @@ function begin(){
   $('#mabelLoses').hide()
   $('#skinnerWins').hide()
   $('#mabelWins').hide()
+  $('#skinnerTie').hide()
+  $('#mabelTie').hide() 
   $('#turn').html("")
   $('#slayAgain').html("")
   score = 0;
@@ -90,21 +92,20 @@ function begin(){
   setTimeout(function(playing){
 
     clearInterval(playing);
-    console.log("Game has Ended");
+    console.log("Slaughter over...for now");
 
     if(turn===1){
-      console.log("Skinner's Go")
+      console.log("Skinner's Start")
       skinnerScore = score
       turn = 2
       // $('.grid').css( 'cursor', 'url(skinnersword_360.png), auto' ); // doesnt work
       // $('.grid').css( 'cursor', 'pointer' ); // doesnt work
       $('.grid').addClass("skinnerCursor");
       $('.grid').removeClass("mabelCursor");
-      $('#turn').html("Mabels turn")
+      $('#turn').html("Mabel's Moment")
       updateScoreBoard();
 
     }else{
-      console.log("Mabel's Go")
       mabelScore = score
       turn = 1
       // $(this).css( 'cursor', 'url(mabelmallet_360.png), auto' ); // doesnt work
@@ -113,20 +114,24 @@ function begin(){
 
       if(skinnerScore > mabelScore){
         // Skinner wins do this:
-        $('#turn').html("Skinner Wins with "+skinnerScore+" to "+mabelScore);
+        $('#turn').html("Skinner Slaughters with "+skinnerScore+" to "+mabelScore);
         $('#mabelLoses').show(); // this is not working
         $('#skinnerWins').show();
       }else if(skinnerScore===mabelScore){
         // If its a draw do this:
         $('#turn').html("Tie")
+        $('#skinnerTie').css("display", "")
+        $('#skinnerTie').css("visibility", "")
+        $('#mabelTie').css("display", "")
+        $('#mabelTie').css("visibility", "")
       }else{
         // Mabel wins do this:
-        $('#turn').html("Mabel Wins with "+mabelScore+" to "+skinnerScore);
+        $('#turn').html("Mabel Mangles with "+mabelScore+" to "+skinnerScore);
         $('#skinnerLoses').show(); 
         $('#mabelWins').show();
       }
       updateScoreBoard();
-      $('#slayAgain').html("Click start to slay again").css('color', 'red')
+      $('#slayAgain').html("Click below to recommence Splat").css('color', 'red')
 
       skinnerScore = 0
       mabelScore = 0
