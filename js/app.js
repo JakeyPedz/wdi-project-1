@@ -50,11 +50,6 @@ var score        = 0;
 var turn         = 1
 var skinnerScore = 0;
 var mabelScore   = 0;
-// var audio        = new Audio('splat.mp3')
-
-
-
-
 
 function begin(){ 
   updateScoreBoard();
@@ -70,7 +65,6 @@ function begin(){
   $('.score span').html(score);
   
   var $lis = $('li');
-  // console.log($lis)
   var numberOfLis  = $lis.length;
   var timeLapsed   = 0;
   var lengthOfGame = 10000;
@@ -98,8 +92,6 @@ function begin(){
       console.log("Skinner's Start")
       skinnerScore = score
       turn = 2
-      // $('.grid').css( 'cursor', 'url(skinnersword_360.png), auto' ); // doesnt work
-      // $('.grid').css( 'cursor', 'pointer' ); // doesnt work
       $('.grid').addClass("skinnerCursor");
       $('.grid').removeClass("mabelCursor");
       $('#turn').html("Mabel's Moment")
@@ -108,14 +100,13 @@ function begin(){
     }else{
       mabelScore = score
       turn = 1
-      // $(this).css( 'cursor', 'url(mabelmallet_360.png), auto' ); // doesnt work
       $('.grid').addClass("mabelCursor");
       $('.grid').removeClass("skinnerCursor");
 
       if(skinnerScore > mabelScore){
         // Skinner wins do this:
         $('#turn').html("Skinner Slaughters with "+skinnerScore+" to "+mabelScore);
-        $('#mabelLoses').show(); // this is not working
+        $('#mabelLoses').show(); 
         $('#skinnerWins').show();
       }else if(skinnerScore===mabelScore){
         // If its a draw do this:
@@ -170,9 +161,5 @@ var soundSplat = function(){
     }).play();
 }
 
-// soundManager.setup({ 
-//  url: "/swf/",
-//  preferFlash: true,
-//  onready: begin  
-// })
+
 
