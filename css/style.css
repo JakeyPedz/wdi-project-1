@@ -1,35 +1,54 @@
-.main {
+main {
+  margin: 30px auto;
+  width: 1200px;
+  background-color: white;
+  overflow: hidden;
+  padding: 20px;
 }
 
 body {
-  background: white;
+  background: url(../images/rat-background.jpg);
+  background-size: cover;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   color: #222;
-  margin: center; 
+  margin: center;   
   background-repeat: no-repeat;
 }
 
-.centre {
-  width: 30%;
-  left: 35%;
-
+.center {
+  width: 400px;
+  float: left;
+  margin-right: 10px;
 }
 
-left {
+.left {
   float: left;
-  width: 30%;
-
+  width: 390px;
+  margin-right: 10px;
 }
 
 .right {
-  float: right;
-  width: 30%;
+  float: left;
+  width: 390px;
 }
 
+.gif {
+  width:390px;
+  height: 300px;
+}
 
+/*give them different classes and style their heights separately */
+.avatar {
+  height: 250px;
+}
 
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
 
 #skinnerLoses {
 display: none;
@@ -47,13 +66,13 @@ display: none;
 display: none;
 }
 
-.player1, {
+/*.player1, {
 float: right;
 }
 
 .player2, {
 float:left;
-}
+}*/
 
 .timer, .score {
   font-size: 30px;
@@ -96,12 +115,8 @@ li {
   text-align: center;
 }
 
-.skinnerCursor:hover {
+ul:hover {
   cursor: url('../images/skinnersword_360.png'), auto;
-}
-
-.mabelCursor:hover {
-  cursor: url('../images/mabelmallet_360.png'), auto;
 }
 
 li.rat {
