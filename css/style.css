@@ -1,3 +1,6 @@
+.main {
+}
+
 body {
   background: white;
   text-align: center;
@@ -6,6 +9,42 @@ body {
   color: #222;
   margin: center; 
   background-repeat: no-repeat;
+}
+
+.centre {
+  width: 30%;
+  left: 35%;
+
+}
+
+left {
+  float: left;
+  width: 30%;
+
+}
+
+.right {
+  float: right;
+  width: 30%;
+}
+
+
+
+
+#skinnerLoses {
+display: none;
+}
+
+#mabelLoses {
+display: none;
+}
+
+#skinnerWins {
+display: none;
+}
+
+#mabelWins {
+display: none;
 }
 
 .player1, {
@@ -55,6 +94,14 @@ li {
   border-radius: 100%;
   line-height: 80px;
   text-align: center;
+}
+
+.skinnerCursor:hover {
+  cursor: url('../images/skinnersword_360.png'), auto;
+}
+
+.mabelCursor:hover {
+  cursor: url('../images/mabelmallet_360.png'), auto;
 }
 
 li.rat {

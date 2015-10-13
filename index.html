@@ -3,6 +3,7 @@
 <head>
   <title>Splat the Rat</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script type="text/javascript" src="./js/soundmanager2.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -12,12 +13,18 @@
   <h2 id="turn"></h2>
   <h4 id="slayAgain"></h4>
 
-  <div>Skinner's Sword:<span class="skinnerScore"></span></div>
-  <div>Mabel's Mallet:<span class="mabelScore"></span></div>
+  <div>Fell Victim to Skinner's Sword:<span class="skinnerScore"></span></div>
+  <div>Fell Victim to Mabel's Mallet:<span class="mabelScore"></span></div>
   <div class="timer">Slay Away!</div>
   <div class="score">Score: <span></span></div>
   <div class="start btn">Commence Splatting</div>
-  <ul>
+  <iframe id="skinnerLoses" src="http://gifs.com/embed/yDqnJW" frameborder="0" scrolling="no" width='480' height='263.9511201629328' style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+  <iframe id="mabelLoses" src="http://gifs.com/embed/vJ2pj8" frameborder="0" scrolling="no" width='480' height='270' style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+  <iframe id="skinnerWins" src="http://gifs.com/embed/yoQkll" frameborder="0" scrolling="no" width='480' height='270' style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+  <iframe id="mabelWins" src="http://gifs.com/embed/vq2oEE" frameborder="0" scrolling="no" width='480' height='270' style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+  <img src="./images/mabelplayer.png">
+  <img src="./images/skinnerplayer.jpg">
+  <ul class="grid">
     <li></li> 
     <li></li> 
     <li></li> 
