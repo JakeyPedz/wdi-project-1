@@ -41,8 +41,3 @@ I built this game for a number of different reasons:
 #### Problems and Challenges
 
 I initially struggled with getting my CSS up to scratch. However, having persevered I was able to learn a lot. One thing that I still cannot do is get the icon of the mouse follower to change. I think I will need to draw up some new game logic in order to adapt this – I will explore changing the means by which they swap players and see if that makes a difference.
-
-
-
-
-
