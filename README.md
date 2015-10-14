@@ -16,26 +16,26 @@ The person that detested Remy the most in the film Ratatouille is still debated 
 
 #### What it was built in
 
-• HTML 5, CSS and jQuery were used to create this game. 
-• Soundmanager was used to load the sounds.
-• Gifs were created independently from youtube. 
+1. HTML 5, CSS and jQuery were used to create this game. 
+2. Soundmanager was used to load the sounds.
+3. Gifs were created independently from youtube. 
 
 
 #### What the game rules are
 
-• Simply splat more rats than your opponent
-• To the victor…the spoils
-o … or in this case a jubilant gif. 
+1. Simply splat more rats than your opponent
+2. To the victor…the spoils
+3. … or in this case a jubilant gif. 
 
 #### Why did you build the game?
 
 I built this game for a number of different reasons:
 
-• There is a market for it
-o People generally do not like rats
-• Enhances reaction speed
-• Reduces Stress 
-• Bring fun to bored people sitting behind desks!
+1. There is a market for it
+2. People generally do not like rats
+3. Enhances reaction speed
+4. Reduces Stress 
+5. Bring fun to bored people sitting behind desks!
 
 
 #### Problems and Challenges
